@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="onToggleMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Disques
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item
+            icon-start
+            *ngFor="let disk of diskList; let i = index;"
+            (click)="onLend(i)">
+      <ion-card [ngClass]="{'is-unavailable': !disk.isAvailable}">
+        <ion-card-header>{{disk.name}}</ion-card-header>
+        <ion-card-content>
+          <p *ngFor="let line of disk.description">{{line}}</p>
+        </ion-card-content>
+      </ion-card>
+    </button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,7 @@
+page-book-list {
+  .is-unavailable {
+    ion-card-content, ion-card-header {
+      background-color: color($colors, danger-light);
+    }
+  }
+}
